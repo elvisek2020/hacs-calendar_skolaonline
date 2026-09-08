@@ -1,0 +1,45 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Škola OnLine",
+        "description": "Enter your Škola OnLine credentials. They are used only to read the timetable.",
+        "data": {
+          "username": "Username",
+          "password": "Password"
+        }
+      },
+      "student": {
+        "title": "Select child",
+        "description": "This account can see several children. Add the integration once per child.",
+        "data": {
+          "student_id": "Child"
+        }
+      },
+      "reauth_confirm": {
+        "title": "Re-authenticate",
+        "description": "The password for account {username} is no longer valid. Enter the current password.",
+        "data": {
+          "password": "Password"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Failed to connect to the Škola OnLine server.",
+      "invalid_auth": "Invalid username or password.",
+      "no_student": "No student whose timetable can be loaded could be found for this account.",
+      "unknown": "Unexpected error."
+    },
+    "abort": {
+      "already_configured": "This student is already configured.",
+      "reauth_successful": "Re-authentication was successful."
+    }
+  },
+  "entity": {
+    "calendar": {
+      "timetable": {
+        "name": "Timetable"
+      }
+    }
+  }
+}

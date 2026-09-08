@@ -1,0 +1,45 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Škola OnLine",
+        "description": "Zadej přihlašovací údaje do Škola OnLine. Použijí se pouze pro čtení rozvrhu.",
+        "data": {
+          "username": "Uživatelské jméno",
+          "password": "Heslo"
+        }
+      },
+      "student": {
+        "title": "Vyber dítě",
+        "description": "Účet vidí rozvrh víc dětí. Pro každé přidej integraci zvlášť.",
+        "data": {
+          "student_id": "Dítě"
+        }
+      },
+      "reauth_confirm": {
+        "title": "Znovu přihlásit",
+        "description": "Heslo účtu {username} už není platné. Zadej aktuální heslo.",
+        "data": {
+          "password": "Heslo"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Nepodařilo se spojit se serverem Škola OnLine.",
+      "invalid_auth": "Neplatné uživatelské jméno nebo heslo.",
+      "no_student": "Účtu se nepodařilo přiřadit žádného studenta, jehož rozvrh lze načíst.",
+      "unknown": "Neočekávaná chyba."
+    },
+    "abort": {
+      "already_configured": "Tento student je už přidaný.",
+      "reauth_successful": "Přihlášení bylo obnoveno."
+    }
+  },
+  "entity": {
+    "calendar": {
+      "timetable": {
+        "name": "Rozvrh"
+      }
+    }
+  }
+}

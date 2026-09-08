@@ -1,0 +1,12 @@
+{
+  "domain": "skolaonline",
+  "name": "Škola OnLine",
+  "codeowners": ["@elvisek2020"],
+  "config_flow": true,
+  "documentation": "https://github.com/elvisek2020/hacs-calendar_skolaonline",
+  "integration_type": "service",
+  "iot_class": "cloud_polling",
+  "issue_tracker": "https://github.com/elvisek2020/hacs-calendar_skolaonline/issues",
+  "requirements": [],
+  "version": "1.0.0"
+}
