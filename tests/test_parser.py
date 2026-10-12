@@ -69,9 +69,7 @@ def hour(
         },
         "groups": groups,
         "rooms": [{"id": "C21943", "abbrev": "7.C", "name": room}],
-        "teachers": [
-            {"id": "C3448479", "abbrev": "Nvk", "displayName": teacher}
-        ],
+        "teachers": [{"id": "C3448479", "abbrev": "Nvk", "displayName": teacher}],
         "detailHours": [
             {"id": "C1486", "name": caption, "order": 1, "timeFrom": "08:00:00"}
         ],

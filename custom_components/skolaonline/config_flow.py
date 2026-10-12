@@ -107,9 +107,7 @@ class SkolaOnlineConfigFlow(ConfigFlow, domain=DOMAIN):
         """Nechá vybrat dítě, když jich rodičovský účet vidí víc."""
         if user_input is not None:
             chosen = user_input[CONF_STUDENT_ID]
-            student = next(
-                item for item in self._students if item.student_id == chosen
-            )
+            student = next(item for item in self._students if item.student_id == chosen)
             return await self._async_create_for(student)
 
         schema = vol.Schema(

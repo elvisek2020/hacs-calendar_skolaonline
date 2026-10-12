@@ -122,9 +122,7 @@ def _parse_clock(value: Any) -> time | None:
 
 def _teacher_name(schedule: dict[str, Any]) -> str | None:
     """Vytáhne jméno učitele; server jich u dělených hodin vrací víc."""
-    if names := _texts_from_list(
-        schedule, "teachers", "displayName", "name", "abbrev"
-    ):
+    if names := _texts_from_list(schedule, "teachers", "displayName", "name", "abbrev"):
         return ", ".join(names) if len(names) <= MAX_TEACHERS else None
 
     if name := _first_text(

@@ -1,12 +1,17 @@
-# Škola OnLine pro Home Assistant
+# Škola OnLine
+
+[![HACS Custom](https://img.shields.io/badge/HACS-Custom-orange.svg)](https://github.com/hacs/integration)
+[![Release](https://img.shields.io/github/v/release/elvisek2020/hacs-calendar_skolaonline)](https://github.com/elvisek2020/hacs-calendar_skolaonline/releases)
+[![Validate](https://github.com/elvisek2020/hacs-calendar_skolaonline/actions/workflows/validate.yml/badge.svg)](https://github.com/elvisek2020/hacs-calendar_skolaonline/actions/workflows/validate.yml)
+[![Licence](https://img.shields.io/github/license/elvisek2020/hacs-calendar_skolaonline)](LICENSE)
+
+[![Otevřít v HACS](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=elvisek2020&repository=hacs-calendar_skolaonline&category=integration)
 
 Neoficiální integrace, která vystaví **rozvrh hodin** ze
 [Škola OnLine](https://aplikace.skolaonline.cz/) jako kalendářovou entitu
 v Home Assistantu.
 
 Integrace pouze čte data. Nic nezapisuje ani nemění.
-
-## Co to umí
 
 - Jedna entita `calendar.<jmeno>_rozvrh` na studenta.
 - Každá vyučovací hodina je samostatná událost: název předmětu, učebna v poli
@@ -15,16 +20,36 @@ Integrace pouze čte data. Nic nezapisuje ani nemění.
 - Načítá se aktuální i příští týden, aktualizace každých 30 minut.
 - Více dětí = více instancí integrace (jeden účet na instanci).
 
-## Instalace přes HACS
+## Předpoklady a závislosti
 
-1. HACS → menu (⋮) → **Custom repositories**.
-2. URL: `https://github.com/elvisek2020/hacs-calendar_skolaonline`, kategorie **Integration**.
-3. Nainstalovat verzi `1.0.0` (nebo novější) a restartovat Home Assistant.
-4. **Nastavení → Zařízení a služby → Přidat integraci → Škola OnLine**.
-5. Zadat uživatelské jméno a heslo do Škola OnLine.
+- Home Assistant 2025.4.0 nebo novější.
+- Účet do Škola OnLine (studentský nebo rodičovský).
+- Integrace nemá žádné externí závislosti, používá `aiohttp` z Home Assistanta.
 
-Vyžaduje Home Assistant 2025.4.0 nebo novější. Integrace nemá žádné externí
-závislosti, používá `aiohttp` z Home Assistanta.
+## Instalace
+
+### HACS (doporučeno)
+
+1. HACS → tři tečky vpravo nahoře → **Custom repositories**
+2. Vlož URL `https://github.com/elvisek2020/hacs-calendar_skolaonline`, kategorie **Integration**
+3. Nainstaluj **Škola OnLine**
+4. Restartuj Home Assistant a přidej integraci v **Nastavení → Zařízení a služby → Přidat integraci**.
+
+HACS nabízí aktualizace z GitHub releases.
+
+### Ručně
+
+Zkopíruj `custom_components/skolaonline` do `/config/custom_components/` a restartuj Home Assistant.
+
+## Konfigurace
+
+**Nastavení → Zařízení a služby → Přidat integraci → Škola OnLine**
+
+1. Zadej uživatelské jméno a heslo do Škola OnLine.
+2. Pokud rodičovský účet vidí víc dětí, průvodce nabídne výběr. Pro další dítě
+   přidej integraci znovu.
+
+Integrace nemá žádné další volby.
 
 ## Jak to funguje
 
@@ -68,6 +93,25 @@ k opětovnému přihlášení (reauth).
   napsaný tolerantně: neznámá nebo chybějící pole hodinu vynechají, místo aby
   shodila celou integraci.
 
+## Vývoj
+
+```bash
+python3 -m venv .venv
+.venv/bin/pip install -r requirements_test.txt ruff
+.venv/bin/python -m pytest
+.venv/bin/ruff check . && .venv/bin/ruff format --check .
+```
+
+Testy pokrývají parser rozvrhu a nepotřebují instalaci Home Assistanta.
+GitHub Actions spouští `hassfest`, validaci HACS, Ruff a Pytest.
+
+## Vydání verze
+
+1. Zvedni verzi v `custom_components/skolaonline/manifest.json` (SemVer).
+2. Doplň sekci `## vX.Y.Z — RRRR-MM-DD` do `CHANGELOG.md`.
+3. Commit `Release vX.Y.Z: …`, `git tag vX.Y.Z`, push commitu i tagu.
+4. GitHub Actions vytvoří release s textem z CHANGELOG a HACS nabídne aktualizaci.
+
 ## Známá omezení
 
 - Ověřeno proti reálnému serveru na rodičovském účtu s jedním dítětem.
@@ -76,17 +120,11 @@ k opětovnému přihlášení (reauth).
   tři, integrace je do popisu nepíše, protože v kalendáři nic neříkají.
 - Integrace nečte známky, úkoly ani zprávy. Záměrně jen rozvrh.
 
-## Vývoj
+## Autor
 
-```bash
-python3 -m venv .venv
-.venv/bin/pip install -r requirements_test.txt
-.venv/bin/python -m pytest
-```
-
-Testy pokrývají parser rozvrhu a nepotřebují instalaci Home Assistanta.
-
-## Poznámka
+**[elvisek2020](https://github.com/elvisek2020)** — vzniklo pro rodinný školní
+dashboard v Home Assistantu, kde jsou rozvrhy, obědy a kroužky v jedné kartě.
+Licence MIT.
 
 Projekt není nijak spojený se společností Škola OnLine a.s. Používáš ho na
 vlastní odpovědnost.

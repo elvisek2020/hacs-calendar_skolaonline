@@ -14,9 +14,7 @@ from .coordinator import SkolaOnlineConfigEntry, SkolaOnlineCoordinator
 PLATFORMS: list[Platform] = [Platform.CALENDAR]
 
 
-async def async_setup_entry(
-    hass: HomeAssistant, entry: SkolaOnlineConfigEntry
-) -> bool:
+async def async_setup_entry(hass: HomeAssistant, entry: SkolaOnlineConfigEntry) -> bool:
     """Nastaví integraci z config entry."""
     client = SkolaOnlineClient(
         async_get_clientsession(hass),
