@@ -5,6 +5,12 @@ text vydání na GitHubu — a ten Home Assistant / HACS ukazuje v okně aktuali
 
 Nejnovější verze je nahoře.
 
+## v1.0.2 — 2026-11-05
+
+### 🎨 Vzhled
+
+- Integrace se v HACS a v Zařízeních a službách jmenuje **Kalendář – rozvrh hodin – Škola OnLine (EK)**, aby šla najít mezi ostatními kalendáři. Doména, entity ani nastavení se nemění.
+
 ## v1.0.1 — 2026-10-12
 
 Údržbové vydání, integrace se chová stejně jako ve v1.0.0.

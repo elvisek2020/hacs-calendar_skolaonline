@@ -1,4 +1,4 @@
-# Škola OnLine
+# Kalendář – rozvrh hodin – Škola OnLine (EK)
 
 [![HACS Custom](https://img.shields.io/badge/HACS-Custom-orange.svg)](https://github.com/hacs/integration)
 [![Release](https://img.shields.io/github/v/release/elvisek2020/hacs-calendar_skolaonline)](https://github.com/elvisek2020/hacs-calendar_skolaonline/releases)
@@ -32,7 +32,7 @@ Integrace pouze čte data. Nic nezapisuje ani nemění.
 
 1. HACS → tři tečky vpravo nahoře → **Custom repositories**
 2. Vlož URL `https://github.com/elvisek2020/hacs-calendar_skolaonline`, kategorie **Integration**
-3. Nainstaluj **Škola OnLine**
+3. Nainstaluj **Kalendář – rozvrh hodin – Škola OnLine (EK)**
 4. Restartuj Home Assistant a přidej integraci v **Nastavení → Zařízení a služby → Přidat integraci**.
 
 HACS nabízí aktualizace z GitHub releases.
@@ -43,7 +43,7 @@ Zkopíruj `custom_components/skolaonline` do `/config/custom_components/` a rest
 
 ## Konfigurace
 
-**Nastavení → Zařízení a služby → Přidat integraci → Škola OnLine**
+**Nastavení → Zařízení a služby → Přidat integraci → Kalendář – rozvrh hodin – Škola OnLine (EK)**
 
 1. Zadej uživatelské jméno a heslo do Škola OnLine.
 2. Pokud rodičovský účet vidí víc dětí, průvodce nabídne výběr. Pro další dítě
